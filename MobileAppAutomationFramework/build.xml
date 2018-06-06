@@ -1,0 +1,38 @@
+<project name="SnapdealMobileAutomation" basedir="." default="jar">
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="jar.dir" value="${build.dir}/jar" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="libs.dir" value="${basedir}/libs" />
+
+	<path id="classpath">
+		<fileset file="${jar.dir}/${ant.project.name}.jar">
+		</fileset>
+	</path>
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="compile" depends="clean">
+		<mkdir dir="${classes.dir}" />
+		<echo>${libs.dir}</echo>
+		<echo>${src.dir}</echo>
+		<javac srcdir="src" verbose="yes" includeantruntime="true"
+			destdir="${classes.dir}" source="1.6" target="1.6" compiler="javac1.6">
+			<classpath path="${libs.dir}">
+				<fileset dir="${libs.dir}">
+				</fileset>
+			</classpath>
+			<classpath path="${src.dir}">
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${jar.dir}" />
+		<jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}"
+			filesetmanifest="skip">
+			<zipgroupfileset dir="${libs.dir}" includes="*.jar"></zipgroupfileset>
+		</jar>
+	</target>
+</project>

@@ -1,0 +1,1 @@
+export ANDROID_HOME=/Users/khagesh.kapil/Documents/OldDocuments/android-sdk-macosx && "/Applications/Appium.app/Contents/Resources/node/bin/node" "/Applications/Appium.app/Contents/Resources/node_modules/appium/bin/appium.js" --port 4723 --address 127.0.0.1 

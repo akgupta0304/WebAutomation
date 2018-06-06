@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/
+2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 h
+ttp://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.snapdeal.automation</groupId>
+	<artifactId>MobileAppAutomationFramework</artifactId>
+	<version>1.9.7.1-SNAPSHOT</version>
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!-- 			<snapshots /> -->
+<!-- 			<id>snapshots</id> -->
+<!-- 			<name>libs-snapshot</name> -->
+<!-- 			<url>http://artifactory.ops.snapdeal.io:8080/libs-snapshot-local -->
+<!-- 			</url> -->
+<!-- 		</repository> -->
+<!-- 		<repository> -->
+<!-- 			<snapshots /> -->
+<!-- 			<id>central</id> -->
+<!-- 			<name>libs-release</name> -->
+<!-- 			<url>http://artifactory.ops.snapdeal.io:8080/libs-release-local</url> -->
+<!-- 		</repository> -->
+<!-- 	</repositories> -->
+<!-- 	<distributionManagement> -->
+<!-- 		<repository> -->
+<!-- 			<snapshots /> -->
+<!-- 			<id>snapshots</id> -->
+<!-- 			<name>libs-snapshot</name> -->
+<!-- 			<url>http://artifactory.ops.snapdeal.io:8080/libs-snapshot-local -->
+<!-- 			</url> -->
+<!-- 		</repository> -->
+<!-- 	</distributionManagement> -->
+	<dependencies>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.seleniumhq.selenium</groupId> -->
+<!-- 			<artifactId>selenium-server-standalone</artifactId> -->
+<!-- 			<version>2.47.1</version> -->
+<!-- 		</dependency> -->
+		 <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>2.47.1</version>
+    </dependency>
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.jackson</groupId> -->
+<!-- 			<artifactId>jackson-all</artifactId> -->
+<!-- 			<version>1.9.9</version> -->
+<!-- 		</dependency> -->
+<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-mapper-asl</artifactId>
+    <version>1.9.0</version>
+</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160212</version>
+		</dependency>
+			<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.38</version>
+	</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<outputDirectory>${basedir}/bin</outputDirectory>
+	</build>
+</project>
